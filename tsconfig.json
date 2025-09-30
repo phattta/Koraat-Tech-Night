@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/particle/page.js", "src/app/page.js", "tailwind.config.js"  ],
   "exclude": [
     "node_modules"
   ]
