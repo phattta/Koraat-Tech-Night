@@ -1,9 +1,14 @@
+"use client";
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '../footer/page'
+import { useState } from "react";
 
 export default function Tictefs() {
+    const [showInput, setShowInput] = useState(false);
+
     return (
         <div>
             <div className="relative z-0 flex items-center justify-center min-h-screen px-2 sm:px-6">
@@ -69,13 +74,12 @@ export default function Tictefs() {
                                 <hr className="border-t border-gray-400 w-1/4" />
                             </div>
                             <div className="max-w-4xl space-y-6">
-                                {/* Regular Ticket */}
                                 <div className="bg-green-200 p-5 shadow w-full">
                                     <h2 className="text-lg font-bold text-black flex items-center gap-2">
                                         <Image
-                                            src="/icon-tickefs.svg"   // ไฟล์อยู่ใน public/
+                                            src="/icon-tickefs.svg"
                                             alt="Ticket Icon"
-                                            width={24}          // กำหนดขนาดเองได้
+                                            width={24}
                                             height={24}
                                         /> Regular Ticket — 500 THB
                                     </h2>
@@ -93,8 +97,6 @@ export default function Tictefs() {
                                         An amazing value — just THB 500 for knowledge, networking, and inspiration!
                                     </p>
                                 </div>
-
-                                {/* Individual Sponsor Ticket */}
                                 <div className="bg-red-200 p-6 shadow">
                                     <h2 className="text-lg font-bold text-black flex items-center gap-2">
                                         <span className="text-yellow-500">⭐</span> Individual Sponsor Ticket — 1,500 THB
@@ -141,8 +143,6 @@ export default function Tictefs() {
                                     , rather than your personal WordPress site.
                                 </p>
                             </div>
-
-                            {/* Ticket Table */}
                             <div className="text-black overflow-x-auto">
                                 <table className="min-w-full border border-gray-200 rounded-sm overflow-hidden shadow bg-white">
                                     <thead>
@@ -185,17 +185,41 @@ export default function Tictefs() {
                                             </td>
                                         </tr>
                                         <tr className="border-t border-gray-200">
-                                            <td colSpan={4} className="px-4 py-3 text-right text-sm">
-                                                <a href="#" className="text-black underline">
-                                                    Click here to enter a coupon code
-                                                </a>
+                                            <td colSpan={4} className="px-4 py-3 text-right text-md">
+                                                {!showInput ? (
+                                                    <a
+                                                        href="#"
+                                                        className="text-blue-500 hover:text-blue-600 underline"
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            setShowInput(true);
+                                                        }}
+                                                    >
+                                                        Click here to enter a coupon code
+                                                    </a>
+                                                ) : (
+                                                    <div className="flex justify-end gap-2">
+                                                        <input
+                                                            type="text"
+                                                            placeholder="Enter coupon"
+                                                            className="border rounded px-3 py-1"
+                                                        />
+                                                        <button
+                                                            className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full"
+                                                            onClick={() => {
+                                                                setShowInput(false);
+                                                            }}
+                                                        >
+                                                            Apply Coupon
+                                                        </button>
+                                                    </div>
+                                                )}
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
 
-                            {/* Register Button */}
                             <div className="flex justify-end mb-15">
                                 <button className="bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-800 transition">
                                     Register →
@@ -217,15 +241,12 @@ export default function Tictefs() {
                                 <hr className="border-t border-gray-400 w-1/4" />
                             </div>
                             <div className="max-w-4xl space-y-6">
-                                {/* Regular Ticket */}
                                 <div className="bg-blue-100 p-6 shadow max-w-4xl mx-auto">
                                     <h2 className="text-3xl font-bold text-orange-600 mb-6">คำถามที่ถามบ่อย</h2>
 
                                     <div className="text-black space-y-4">
-                                        {/* FAQ 1 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
-                                                {/* ลูกศรซ้าย */}
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
                                                 เราสามารถชำระเงินค่าบัตรเข้าร่วมงาน WordCamp Bangkok 2025 ได้ที่ไหนบ้าง?
                                             </summary>
@@ -237,8 +258,6 @@ export default function Tictefs() {
                                                 <a href="#" className="text-blue-500 hover:text-blue-600 underline">Contact</a>
                                             </p>
                                         </details>
-
-                                        {/* FAQ 2 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -248,8 +267,6 @@ export default function Tictefs() {
                                                 หลังจากที่ท่านซื้อบัตร WordCamp Bangkok 2025 เป็นที่เรียบร้อยแล้ว ท่านสามารถส่งต่อบัตร และ/หรือแก้ไขข้อมูลผู้เข้าร่วมงานได้ ผ่านทางลิงก์ที่ได้ในอีเมลยืนยันการซื้อบัตร โดยที่ท่านไม่จำเป็นต้องติดต่อทีมงานของเรา
                                             </p>
                                         </details>
-
-                                        {/* FAQ 3 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -259,8 +276,6 @@ export default function Tictefs() {
                                                 บัตรทั้ง 2 แบบจะสามารถเข้าร่วมงานได้เหมือนกันทั้งคู่ อย่างไรก็ดี หากท่านต้องการสนับสนุนการจัดงานของเรา เราแนะนำให้ท่านซื้อบัตร Individual Sponsor ได้เลย
                                             </p>
                                         </details>
-
-                                        {/* FAQ 4 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -271,8 +286,6 @@ export default function Tictefs() {
                                                 <a href="#" className="text-blue-500 underline">Ticket Refund Request</a>
                                             </p>
                                         </details>
-
-                                        {/* FAQ 5 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -284,18 +297,13 @@ export default function Tictefs() {
                                             </p>
                                         </details>
                                     </div>
-
                                 </div>
 
-                                {/* Individual Sponsor Ticket */}
                                 <div className="bg-neutral-200 p-6 shadow">
                                     <h2 className="text-3xl font-bold text-orange-600 mb-6">Frequently Asked Questions</h2>
-
                                     <div className="text-black space-y-4">
-                                        {/* FAQ 1 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
-                                                {/* ลูกศรซ้าย */}
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
                                                 How can I pay the ticket fee of WordCamp Bangkok 2025?
                                             </summary>
@@ -307,8 +315,6 @@ export default function Tictefs() {
                                                 <a href="#" className="text-blue-500 hover:text-blue-600 underline">Contact</a>
                                             </p>
                                         </details>
-
-                                        {/* FAQ 2 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -321,8 +327,6 @@ export default function Tictefs() {
                                                 You don’t need to contact us or ask us for permission.
                                             </p>
                                         </details>
-
-                                        {/* FAQ 3 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -332,8 +336,6 @@ export default function Tictefs() {
                                                 Both ticket types are identical of each other. However, if you want to support our works, we strongly recommend purchasing microsponsor ticket.
                                             </p>
                                         </details>
-
-                                        {/* FAQ 4 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -344,8 +346,6 @@ export default function Tictefs() {
                                                 <a href="#" className="text-blue-500 hover:text-blue-600 underline">Ticket Refund Request</a>
                                             </p>
                                         </details>
-
-                                        {/* FAQ 5 */}
                                         <details open className="group text-lg pb-3">
                                             <summary className="flex items-center cursor-pointer font-semibold text-gray-800">
                                                 <span className="mr-2 transition-transform group-open:rotate-90">▶</span>
@@ -381,8 +381,6 @@ export default function Tictefs() {
                             <div className="flex justify-center mt-[60px] mb-14">
                                 <hr className="border-t border-gray-400 w-1/4" />
                             </div>
-
-                            {/* English Section */}
                             <section>
                                 <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
                                     Photography at WordCamp Bangkok 2025
@@ -398,13 +396,9 @@ export default function Tictefs() {
                                 </p>
                             </section>
                         </div>
-
-                        {/* Divider line */}
                         <div className="flex justify-center mt-15">
                             <hr className="border-t border-gray-400 w-full max-w-212" />
                         </div>
-
-                        {/* Discover More Section */}
                         <div className="text-lg text-white text-center my-12">
                             <h2 className="text-2xl sm:text-3xl font-extrabold">
                                 Discover more from WordCamp Bangkok 2025
@@ -412,8 +406,6 @@ export default function Tictefs() {
                             <p className="text-white mt-2">
                                 Subscribe to get the latest posts sent to your email.
                             </p>
-
-                            {/* Subscribe Form */}
                             <div className="mt-6 flex justify-center space-x-2 mb-25">
                                 <input
                                     type="email"
@@ -425,8 +417,6 @@ export default function Tictefs() {
                                 </button>
                             </div>
                         </div>
-
-                        {/* Sponsors Section */}
                         <div className="text-center mb-18 max-w-4xl mx-auto">
                             <h2 className="text-white text-2xl sm:text-3xl font-bold mb-6">Gold</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 place-items-center">

@@ -58,8 +58,8 @@ export default function Footer() {
         <div className="flex flex-col h-full ml-[40px]">
           <h3 className="text-2xl font-extrabold mb-4">WordCamp Info</h3>
           <ul className="space-y-2 text-md">
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Tickets</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Location</Link></li>
+            <li><Link href="/tickets" className="hover:text-cyan-500 hover:underline hover:decoration-white">Tickets</Link></li>
+            <li><Link href="/access/Location" className="hover:text-cyan-500 hover:underline hover:decoration-white">Location</Link></li>
             <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Sponsors</Link></li>
             <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Individual Sponsors</Link></li>
             <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Contact</Link></li>

@@ -25,7 +25,7 @@ export default function Home() {
           </p>
 
           {/* Event Details */}
-          <div className="text-white bg-gray-800/50 backdrop-blur-sm border border-blue-600/50 rounded-lg p-8 max-w-4xl mx-auto mb-8">
+          <div className="text-white bg-black/50 backdrop-blur-sm border border-blue-600/50 rounded-lg p-8 max-w-4xl mx-auto mb-8">
             <div className="text-5xl md:text-7xl font-bold mb-6">
               30 AUGUST 2025
             </div>
@@ -64,6 +64,7 @@ export default function Home() {
                 src="/qr.png"
                 width={20}
                 height={12}
+                alt="QR Code"
                 className="w-auto h-auto mr-4 invert"
               />
               QRCODE
