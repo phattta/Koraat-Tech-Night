@@ -60,9 +60,9 @@ export default function Footer() {
           <ul className="space-y-2 text-md">
             <li><Link href="/tickets" className="hover:text-cyan-500 hover:underline hover:decoration-white">Tickets</Link></li>
             <li><Link href="/access/Location" className="hover:text-cyan-500 hover:underline hover:decoration-white">Location</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Sponsors</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Individual Sponsors</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Contact</Link></li>
+            <li><Link href="/sponsors" className="hover:text-cyan-500 hover:underline hover:decoration-white">Sponsors</Link></li>
+            <li><Link href="/sponsors/Individual" className="hover:text-cyan-500 hover:underline hover:decoration-white">Individual Sponsors</Link></li>
+            <li><Link href="/contact" className="hover:text-cyan-500 hover:underline hover:decoration-white">Contact</Link></li>
           </ul>
         </div>
 
@@ -70,11 +70,11 @@ export default function Footer() {
         <div className="flex flex-col h-full">
           <h3 className="text-2xl font-extrabold mb-4">General Info</h3>
           <ul className="space-y-2 text-md">
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">What is WordCamp?</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">What is Contributor Day?</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Agreement among WordCamp Organizers, Speakers, Sponsors, and Volunteers</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Organizers</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Contact</Link></li>
+            <li><Link href="/about/Wordcamp" className="hover:text-cyan-500 hover:underline hover:decoration-white">What is WordCamp?</Link></li>
+            <li><Link href="/about/Contributor" className="hover:text-cyan-500 hover:underline hover:decoration-white">What is Contributor Day?</Link></li>
+            <li><Link href="/about/Agreement" className="hover:text-cyan-500 hover:underline hover:decoration-white">Agreement among WordCamp Organizers, Speakers, Sponsors, and Volunteers</Link></li>
+            <li><Link href="/about/Organizers" className="hover:text-cyan-500 hover:underline hover:decoration-white">Organizers</Link></li>
+            <li><Link href="/Contact" className="hover:text-cyan-500 hover:underline hover:decoration-white">Contact</Link></li>
           </ul>
         </div>
 
@@ -82,9 +82,9 @@ export default function Footer() {
         <div className="flex flex-col h-full">
           <h3 className="text-2xl font-extrabold mb-4">Attendee Info</h3>
           <ul className="space-y-2 text-md">
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Tickets</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Location</Link></li>
-            <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Code of Conduct</Link></li>
+            <li><Link href="/tickets" className="hover:text-cyan-500 hover:underline hover:decoration-white">Tickets</Link></li>
+            <li><Link href="/access/Location" className="hover:text-cyan-500 hover:underline hover:decoration-white">Location</Link></li>
+            <li><Link href="/about/Conduct" className="hover:text-cyan-500 hover:underline hover:decoration-white">Code of Conduct</Link></li>
             <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Ticket Invoice Request</Link></li>
             <li><Link href="#" className="hover:text-cyan-500 hover:underline hover:decoration-white">Ticket Refund Request</Link></li>
           </ul>

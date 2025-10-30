@@ -43,31 +43,31 @@ export default function Navbar() {
                         {/* Dropdown */}
                         <div className="absolute left-0 top-full mt-0 w-72 bg-black/80 border border-cyan-500/50 shadow-md rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
                             <Link
-                                href="/about/what-is-wordcamp"
+                                href="/about/Wordcamp"
                                 className="block px-4 py-2 hover:bg-gray-900/30 hover:text-cyan-500 hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-4"
                             >
                                 What is WordCamp?
                             </Link>
                             <Link
-                                href="/about/contributor-day"
+                                href="/about/Contributor"
                                 className="block px-4 py-2 hover:bg-gray-900/30 hover:text-cyan-500 hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-4"
                             >
                                 What is Contributor Day?
                             </Link>
                             <Link
-                                href="/about/code-of-conduct"
+                                href="/about/Conduct"
                                 className="block px-4 py-2 hover:bg-gray-900/30 hover:text-cyan-500 hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-4"
                             >
                                 Code of Conduct
                             </Link>
                             <Link
-                                href="/about/organizers"
+                                href="/about/Organizers"
                                 className="block px-4 py-2 hover:bg-gray-900/30 hover:text-cyan-500 hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-4"
                             >
                                 Organizers
                             </Link>
                             <Link
-                                href="/about/agreement"
+                                href="/about/Agreement"
                                 className="block px-4 py-2 hover:bg-gray-900/30 hover:text-cyan-500 hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-4"
                             >
                                 Agreement among WordCamp Organizers, Speakers, Sponsors, and Volunteers
@@ -106,11 +106,12 @@ export default function Navbar() {
                     {/* Sponsors Dropdown */}
                     <div className="group relative">
                         <button className="flex items-center gap-1">
-                            <span
+                            <Link
+                                href="/sponsors"
                                 className={`${linkClass} hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-[2px]`}
                             >
                                 Sponsors
-                            </span>
+                            </Link>
                             <span className="transition-transform duration-200 group-hover:rotate-0">
                                 <Image
                                     src="/icon-small.png"   // ไฟล์รูปที่คุณมี เช่น SVG/PNG
@@ -123,7 +124,7 @@ export default function Navbar() {
                         </button>
                         <div className="absolute left-0 top-full mt-0 w-72 bg-black/80 border border-cyan-500/50 shadow-md rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
                             <Link
-                                href="/sponsors/gold"
+                                href="/sponsors/Individual"
                                 className="block px-4 py-2 hover:bg-gray-900/30 hover:text-cyan-500 hover:underline hover:decoration-white hover:decoration-2 hover:underline-offset-4"
                             >
                                 Individual Sponsors
@@ -134,33 +135,6 @@ export default function Navbar() {
                     <Link href="/contact" className={linkClass}>
                         Contact
                     </Link>
-                </div>
-
-                {/* Mobile Menu Button */}
-                <div className="md:hidden flex justify-between items-center py-4">
-                    <Link href="/" className="text-xl font-bold">
-                        WordCamp
-                    </Link>
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="text-gray-600 hover:text-gray-900"
-                    >
-                        <svg
-                            className="h-6 w-6"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            {isMenuOpen ? (
-                                <path d="M6 18L18 6M6 6l12 12" />
-                            ) : (
-                                <path d="M4 6h16M4 12h16M4 18h16" />
-                            )}
-                        </svg>
-                    </button>
                 </div>
 
                 {/* Mobile Menu */}
@@ -176,19 +150,19 @@ export default function Navbar() {
                         {/* Mobile About Section */}
                         <div className="py-2">
                             <div className="font-medium">About</div>
-                            <Link href="/about/what-is-wordcamp" className="block pl-4 py-2 hover:bg-gray-100">
+                            <Link href="/about/Wordcamp" className="block pl-4 py-2 hover:bg-gray-100">
                                 What is WordCamp?
                             </Link>
-                            <Link href="/about/contributor-day" className="block pl-4 py-2 hover:bg-gray-100">
+                            <Link href="/about/Contributor" className="block pl-4 py-2 hover:bg-gray-100">
                                 What is Contributor Day?
                             </Link>
-                            <Link href="/about/code-of-conduct" className="block pl-4 py-2 hover:bg-gray-100">
+                            <Link href="/about/Conduct" className="block pl-4 py-2 hover:bg-gray-100">
                                 Code of Conduct
                             </Link>
-                            <Link href="/about/organizers" className="block pl-4 py-2 hover:bg-gray-100">
+                            <Link href="/about/Organizers" className="block pl-4 py-2 hover:bg-gray-100">
                                 Organizers
                             </Link>
-                            <Link href="/about/agreement" className="block pl-4 py-2 hover:bg-gray-100">
+                            <Link href="/about/Agreement" className="block pl-4 py-2 hover:bg-gray-100">
                                 Agreement
                             </Link>
                         </div>
@@ -196,22 +170,16 @@ export default function Navbar() {
                         {/* Mobile Access Section */}
                         <div className="py-2">
                             <div className="font-medium">Access</div>
-                            <Link href="/access/location" className="block pl-4 py-2 hover:bg-gray-100">
+                            <Link href="/access/Location" className="block pl-4 py-2 hover:bg-gray-100">
                                 Location
-                            </Link>
-                            <Link href="/access/transport" className="block pl-4 py-2 hover:bg-gray-100">
-                                Transport
                             </Link>
                         </div>
 
                         {/* Mobile Sponsors Section */}
                         <div className="py-2">
                             <div className="font-medium">Sponsors</div>
-                            <Link href="/sponsors/gold" className="block pl-4 py-2 hover:bg-gray-100">
-                                Gold Sponsors
-                            </Link>
-                            <Link href="/sponsors/silver" className="block pl-4 py-2 hover:bg-gray-100">
-                                Silver Sponsors
+                            <Link href="/sponsors/Individual" className="block pl-4 py-2 hover:bg-gray-100">
+                                Individual Sponsors
                             </Link>
                         </div>
 
