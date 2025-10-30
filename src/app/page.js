@@ -21,7 +21,7 @@ export default function Home() {
           <p className="text-lg text-blue-300 md:text-xl max-w-4xl mx-auto text-muted-foreground leading-relaxed mb-5">
             A GATHERING TO INSPIRE TECHNOLOGY AND CONNECT THE TECH COMMUNITY IN KORAT.
             JOIN DEVELOPERS, CREATIVES, AND BUSINESS INNOVATORS TO EXCHANGE IDEAS AND SHAPE
-            KORAT'S FUTURE AS A REGIONAL TECH HUB.
+            KORAT&apos;S FUTURE AS A REGIONAL TECH HUB.
           </p>
 
           {/* Event Details */}
